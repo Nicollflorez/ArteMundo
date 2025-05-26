@@ -1,0 +1,595 @@
+/* --- 1. ESTILOS GLOBALES --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- 2. ENCABEZADO --- */
+header {
+    background-color: #b36b61;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* MENÚ DENTRO DEL CONTENEDOR --- */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #a55848;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #7a4531;
+}
+
+/* --- 3. CONTENIDO PRINCIPAL --- */
+main {
+    padding: 20px 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* --- 4. GALERÍA DE OBRAS --- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+.obra-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.obra-card:hover {
+    transform: translateY(-5px);
+}
+
+.obra-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.obra-card h3 {
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    color: #222;
+}
+
+.obra-card p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* --- 5. PIE DE PÁGINA --- */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    font-size: 0.8em;
+    color: #777;
+    border-radius: 10px;
+}
+
+/* --- 6. MEDIA QUERIES --- */
+@media (max-width: 992px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}
+
+/* --- 7. PORTADA PRINCIPAL    --- */
+.portada {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.portada img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.texto-portada {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.texto-portada h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.texto-portada p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #a55848;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #a55848;
+}
+
+/* --- 8. SECCIÓN ACERCA --- */
+.acerca-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.acerca-header img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.acerca-descripcion {
+    margin-top: 20px;
+}
+
+.acerca-descripcion h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #b36b61;
+}
+
+.acerca-descripcion p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #555;
+    text-align: justify;
+}
+
+.acerca-descripcion .clasificacion {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #a55848;
+}
+
+.acerca-descripcion .imagen-acerca {
+    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.acerca-descripcion .boton {
+    margin-top: 20px;
+}
+.imagen-acerca {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.obra-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+    display: flex; /* Añadimos flexbox */
+    flex-direction: column; /* Los elementos se apilarán verticalmente */
+}
+
+.obra-card > *:not(form) { /* Selecciona todos los hijos excepto el formulario */
+    margin-bottom: 10px; /* Añade un margen inferior a los elementos de arriba */
+}
+
+.obra-card form {
+    margin-top: auto; /* Empuja el formulario (y el botón) hacia la parte inferior */
+}
+
+.boton-agregar {
+    display: inline-block;
+    padding: 8px 24px; /* Reducimos el padding vertical a 8px */
+    background-color: #a55848;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    box-shadow: none;
+}
+
+.boton-agregar:hover {
+    background-color: #7a4531;
+}
+
+  .boton-volver {
+    display: inline-block;
+    padding: 10px 24px; /* Ajusta el padding según necesites */
+    background-color: #a55848; /* Mismo color que los botones */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    box-shadow: none;
+    margin-top: 20px; /* Añade un poco de espacio arriba */
+}
+
+.boton-volver:hover {
+    background-color: #7a4531; /* Mismo color de hover */
+}
+.carrito-detalle {
+    max-width: 800px; /* Ancho máximo del contenedor de la tabla */
+    margin: 20px auto; /* Centra horizontalmente el contenedor */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-detalle table {
+    width: 100%;
+    border-collapse: collapse; /* Para que los bordes de las celdas se junten */
+}
+
+.carrito-detalle th,
+.carrito-detalle td {
+    padding: 10px;
+    text-align: center; /* Centra el texto dentro de las celdas */
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-detalle th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.carrito-detalle tbody tr:last-child td {
+    border-bottom: none; /* Quita el borde inferior de la última fila */
+}
+
+.carrito-detalle .accion-eliminar {
+    /* Estilos para el botón "Eliminar" si lo necesitas */
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.carrito-detalle .accion-eliminar:hover {
+    background-color: #c82333;
+}
+
+.carrito-detalle .total-pagar {
+    font-weight: bold;
+    text-align: right; /* Alinea el "Total a pagar" a la derecha */
+    padding-top: 15px;
+}
+
+.scratch-game-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Espacio debajo del juego */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto; /* Esto ya lo centra horizontalmente */
+    padding: 20px;
+    display: flex; /* Añadimos flexbox */
+    flex-direction: column; /* Alineamos los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos hijos */
+    text-align: center; /* Opcional: Centra el texto por defecto */
+}
+.instructions {
+    text-align: justify;
+    margin-bottom: 20px; /* Espacio debajo de las instrucciones */
+    /* Puedes añadir más estilos si lo deseas, como un ancho máximo */
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center; /* Centramos el texto por defecto dentro del contenedor */
+}
+
+#qr-code {
+    max-width: 400px; /* Aumentamos el tamaño máximo de la imagen */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.app-container p {
+    text-align: justify; /* Justificamos el texto */
+}
+header {
+    background-color: #b36b61;
+    color: #fff;
+    padding: 15px 20px; /* Ajustamos el padding general del header */
+    margin-bottom: 20px;
+    border-radius: 0; /* Quitamos el border-radius para que ocupe todo el ancho */
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: auto auto auto; /* Tres columnas de ancho automático */
+    align-items: center; /* Alineación vertical al centro */
+    justify-content: space-between; /* Espacio entre los elementos */
+    max-width: 960px;
+    margin: 0 auto; /* Centra el grid dentro del header */
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0; /* Resetear márgenes del h1 */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0; /* Resetear márgenes de la ul */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 10px; /* Reducimos un poco el padding de los enlaces */
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ddd;
+}
+
+.carrito-container {
+    justify-self: end; /* Alinea el carrito a la derecha en el grid */
+}
+
+.carrito {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em; /* Aumentamos el tamaño del icono del carrito */
+}
+
+.badge {
+    background-color: #fff;
+    color: #b36b61;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 0.7em;
+    vertical-align: super;
+    margin-left: 5px;
+}
+.contact-us {
+    background-color: #f0f0f0; /* Un tono claro de fondo como el body */
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.contact-us h3 {
+    font-size: 1.5em;
+    color: #b36b61; /* Nuestro color principal */
+    margin-bottom: 20px;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Un poco más de espacio entre los íconos */
+    margin-bottom: 20px;
+}
+
+.contact-option {
+    text-align: center;
+}
+
+.contact-option a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto */
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-icon.whatsapp {
+    background-color: #25D366; /* Verde de WhatsApp */
+    /* Aquí podrías añadir una imagen de icono si lo prefieres:
+    background-image: url('/img/whatsapp.png');
+    */
+}
+
+.contact-icon.email {
+    background-color: #a55848; /* Uno de nuestros colores de botón */
+    /* background-image: url('/img/email.png'); */
+}
+
+.contact-icon.phone {
+    background-color: #b36b61; /* Nuestro color principal */
+    /* background-image: url('/img/phone.png'); */
+}
+
+.contact-option p:first-child {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.contact-option p:nth-child(2) {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 2px;
+}
+
+.contact-option p:last-child {
+    color: #777;
+    font-size: 0.9em;
+}
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contact-icon.whatsapp {
+    background-color: #25D366; /* Mantenemos el color de fondo por si la imagen no carga */
+    background-image: url('/img/whatsapp.png');
+}
+
+.contact-icon.email {
+    background-color: #a55848;
+    background-image: url('/img/email.png');
+}
+
+.contact-icon.phone {
+    background-color: #b36b61;
+    background-image: url('/img/phone.png');
+}
+.contact-us h3 {
+    font-size: 1.8em; /* Aumentamos el tamaño de la fuente */
+    font-weight: bold; /* Ponemos el texto en negrita */
+    color: #b36b61; /* Mantenemos nuestro color principal */
+    margin-bottom: 20px;
+}

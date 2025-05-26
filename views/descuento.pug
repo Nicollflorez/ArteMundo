@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h2 ¡Ofertas Especiales y un Juego para Ti!
+
+  p ¡A pintar descuentos! Disfruta de este divertido juego interactivo.
+
+  .scratch-game-container
+    iframe(src="https://scratch.mit.edu/projects/1174022568/embed", width="485", height="402", frameborder="0", allowtransparency="true", allowfullscreen)
+
+  .instructions
+    h3 Manual de Juego
+    p Para iniciar, haz clic en la bandera verde <span style="color: green;">&#128681;</span> que está sobre el juego.
+    p Mueve el pincel utilizando el ratón.
+    p Haz clic con el botón del ratón para que el pincel pinte el cuadro que estés tocando.
+    p Pinta los cuadros <span style="background-color: yellow; color: black; padding: 2px; border-radius: 3px;">amarillos</span> para sumar 1 punto a tu contador de descuentos.
+    p Evita pintar los cuadros <span style="background-color: red; color: white; padding: 2px; border-radius: 3px;">rojos</span>, ¡ya que cada uno te restará 1 punto!
+    p ¡A conseguir la puntuación más alta de descuentos!
+
+  p ¡No te pierdas nuestras increíbles ofertas en la galería!
+  // Aquí podrías listar las obras con descuento si lo deseas

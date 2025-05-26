@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2= titulo
+
+  .galeria
+    each obra in obras
+      .obra-card
+        a(href=`/obra/${obra.id}`)
+          img(src=obra.imagen, alt=obra.titulo)
+        a(href=`/obra/${obra.id}`)
+          h3= obra.titulo
+        p= obra.autor + " (" + obra.año + ")"
+        p Precio: $#{obra.precio}
+        form(action="/carrito/agregar", method="POST")
+          input(type="hidden", name="id", value=obra.id)
+          button.boton-agregar(type="submit") Agregar al carrito
+
+

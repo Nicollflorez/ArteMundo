@@ -1,0 +1,56 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title ArteMundo
+
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    header
+      .container.header-grid
+        h1.logo ArteMundo
+        nav
+          ul.nav-list
+            li: a(href='/') Inicio
+            li: a(href='/galeria') Galería
+            li: a(href='/acerca') Acerca
+            li: a(href='/descuento') Descuentos
+            li: a(href='/app') App
+        .carrito-container
+          a.carrito(href='/carrito', title='Ver carrito')
+            svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", fill="currentColor", style="width: 1.5em; height: 1.5em; vertical-align: middle;")
+              path(d="M21.822 7.431A1 1 0 0 0 21 7h-2.768l-.928-2.783A2 2 0 0 0 16.34 3H7.657a2 2 0 0 0-1.966 1.217L4.77 7H2.178a1 1 0 0 0-.822.438 1 1 0 0 0-.029.923l2.754 8.262a2 2 0 0 0 1.94 1.519h9.028a2 2 0 0 0 1.94-1.519l2.754-8.262a.998.998 0 0 0 .029-.923zM6 6l3.757 11H14.24l3.757-11H6z")
+              path(d="M9 17a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm8 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0z")
+            if typeof carritoCount !== 'undefined' && carritoCount > 0
+              span.badge= carritoCount
+            else
+              span.badge 0
+
+    .container
+      block content
+
+    footer
+      .contact-us
+        h3 Contáctanos
+        .contact-options
+          .contact-option
+            a(href="https://wa.me/573159464491", target="_blank", rel="noopener noreferrer")
+              .contact-icon.whatsapp
+              p WhatsApp
+              p Escríbenos tus dudas e inquietudes
+              p 3159464491
+          .contact-option
+            a(href="mailto:info@artemundomuseo.com")
+              .contact-icon.email
+              p Escríbenos
+              p info@artemundomuseo.com
+              p Estamos listos para atenderte
+          .contact-option
+            a(href="tel:+573159464491")
+              .contact-icon.phone
+              p Llámanos
+              p Líneas nacionales:
+              p 3159464491
+
+      p © 2025 Museo de Arte - Todos los derechos reservados

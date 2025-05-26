@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  h2= titulo
+
+  .carrito-detalle
+    if carrito.length === 0
+      p Tu carrito está vacío.
+    else
+      table
+        thead
+          tr
+            th Título
+            th Cantidad
+            th Precio
+            th Total
+            th Acción
+        tbody
+          each item in carrito
+            tr
+              td= item.titulo
+              td= item.cantidad
+              td $#{item.precio.toFixed(2)}
+              td $#{(item.precio * item.cantidad).toFixed(2)}
+              td
+                form(action='/carrito/eliminar', method='POST', style='display:inline')
+                  input(type='hidden', name='id', value=item.id)
+                  button.accion-eliminar(type='submit') Eliminar
+
+    // Total general del carrito
+    -
+      let totalGeneral = 0;
+      carrito.forEach(item => totalGeneral += item.precio * item.cantidad);
+    p.total-pagar Total a pagar: $#{totalGeneral.toFixed(2)}
+
+  a.boton-volver(href='/galeria') ← Volver a Galería
