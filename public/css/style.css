@@ -593,3 +593,18 @@ nav a:hover {
     color: #b36b61; /* Mantenemos nuestro color principal */
     margin-bottom: 20px;
 }
+.acerca-descripcion p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  color: #555;
+  text-align: justify; /* Para justificar el texto */
+
+}
+.acerca-descripcion ul {
+  list-style-type: none; /* Esto quitará las viñetas */
+  padding-left: 0; /* Opcional: elimina el espacio de la sangría predeterminada de la lista */
+}
+
+.acerca-descripcion ul li {
+  margin-bottom: 5px; /* Opcional: añade un poco de espacio entre los elementos de la lista */
+}
